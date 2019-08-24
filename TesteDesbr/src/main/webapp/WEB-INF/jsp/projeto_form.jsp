@@ -37,10 +37,7 @@
       <form:input path="data_inicio" cssClass="form-control" id="data_inicio" width="276"/>
    </div>
 
-   <div class="form-group">
-     <label>Gerente</label>
-     <form:input path="idgerente" cssClass="form-control" id="idgerente" />
-   </div>
+ 
 
    <div class="form-group">
           <label>Gerente</label>
