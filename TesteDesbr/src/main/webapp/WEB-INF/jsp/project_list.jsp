@@ -33,8 +33,8 @@
     <th scope="row">Status</th>
     <th scope="row">Gerente</th>
 
-    <th scope="row">Update</th>
-    <th scope="row">Delete</th>
+    <th scope="row">Atualizar</th>
+    <th scope="row">Remover</th>
    </thead>
    <tbody>
     <c:forEach items="${projectList }" var="proj" >
@@ -49,11 +49,15 @@
       <td>
 
        <spring:url value="/projetos/update/${proj.id }" var="updateURL" />
-       <a class="btn btn-primary" href="${updateURL }" role="button" >Update</a>
+       <a class="btn btn-primary" href="${updateURL }" role="button" >Atualizar</a>
       </td>
       <td>
+
        <spring:url value="/projetos/delete/${proj.id }" var="deleteURL" />
-       <a class="btn btn-primary" href="${deleteURL }" role="button" >Delete</a>
+       <spring:url value="${proj.status }" var="projStatus" />
+       <a onclick="excluse('${projStatus }', '${deleteURL }')" class="btn btn-primary" href="#" role="button" >Remover</a>
+
+
       </td>
      </tr>
     </c:forEach>
@@ -61,10 +65,7 @@
   </table>
   
   
-  
-<button onclick="openModal()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
-  Abrir modal de demonstra??o
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -81,7 +82,7 @@
       </div>
       <div class="modal-footer">
         <button onclick="closeModal()"  type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Salvar mudan?as</button>
+        <button type="button" class="btn btn-primary">Salvar </button>
       </div>
     </div>
   </div>
@@ -102,6 +103,15 @@
 	 alert("oi");
 	  document.getElementById("modalExemplo").style.display = "none";
  }
+
+ function excluse( status , delUrl) {
+     if ((status === 'iniciado') || (status === 'em andamento') || (status === 'encerrado') ){
+ 	    alert('Erro ao deletar, projeto ' + status);
+ 	    return;
+     }else{
+        window.location=delUrl;
+     }
+  }
 
  
 </script>

@@ -1,9 +1,7 @@
 package com.desbr.controller;
 
 import com.desbr.model.Pessoa;
-import com.desbr.model.Projeto;
 import com.desbr.service.PessoaService;
-import com.desbr.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,22 +14,19 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping(value = "/projetos")
-public class ProjectController {
+@RequestMapping(value = "/pessoas")
+public class PessoaController {
 
 
     @Autowired
-    ProjectService service;
-
-    @Autowired
-    PessoaService servicePessoa;
+    PessoaService service;
 
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView list() {
         ModelAndView model = new ModelAndView("project_list");
-        List<Projeto> projetoList = service.getAll();
-        model.addObject("projectList", projetoList);
+        List<Pessoa> pessoaList = service.getAll();
+        model.addObject("projectList", pessoaList);
 
         return model;
     }
@@ -40,13 +35,9 @@ public class ProjectController {
     public ModelAndView add() {
         ModelAndView model = new ModelAndView();
 
-        Projeto proj = new Projeto();
-        model.addObject("projetoForm", proj);
-
-        List<Pessoa> pessoaList = servicePessoa.getAll();
-        model.addObject("pessoaList", pessoaList);
-
-        model.setViewName("projeto_form");
+        Pessoa proj = new Pessoa();
+        model.addObject("pessoaForm", proj);
+        model.setViewName("pessoa_form");
 
         return model;
     }
@@ -55,28 +46,18 @@ public class ProjectController {
     public ModelAndView editArticle(@PathVariable long id) {
         ModelAndView model = new ModelAndView();
 
-        Projeto proj = service.getById(id);
-        model.addObject("projetoForm", proj);
-
-        List<Pessoa> pessoaList = servicePessoa.getAll();
-        model.addObject("pessoaList", pessoaList);
-
-        model.setViewName("projeto_form");
+        Pessoa proj = service.getById(id);
+        model.addObject("pessoaForm", proj);
+        model.setViewName("pessoa_form");
 
         return model;
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView save(@ModelAttribute("projetoForm") Projeto proj) {
+    public ModelAndView save(@ModelAttribute("pessoaForm") Pessoa proj) {
         service.saveOrUpdate(proj);
 
-        return new ModelAndView("redirect:/projetos/list");
+        return new ModelAndView("redirect:/pessoas/list");
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public ModelAndView delete(@PathVariable("id") long id) {
-        service.delete(id);
-
-        return new ModelAndView("redirect:/projetos/list");
-    }
 }

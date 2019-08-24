@@ -43,6 +43,13 @@
    </div>
 
    <div class="form-group">
+          <label>Gerente</label>
+          <form:select path="idgerente" cssClass="form-control" id="idgerente">
+              <form:options items="${pessoaList}" />
+          </form:select>
+   </div>
+
+   <div class="form-group">
          <label>Previsão término</label>
          <form:input path="data_previsao_fim" cssClass="form-control" id="data_previsao_fim" width="276" />
   </div>
@@ -59,10 +66,27 @@
            <label>Descrição</label>
            <form:input path="descricao" cssClass="form-control" id="descricao" />
     </div>
+
+
+
     <div class="form-group">
-           <label>Status</label>
-           <form:input path="status" cssClass="form-control" id="status" />
-    </div>
+               <label>Status</label>
+
+               <form:select path="status"  id="status" width="200">
+                  <form:option value="análise" label="análise"/>
+                  <form:option value="análise realizada" label="análise realizada"/>
+                  <form:option value="análise aprovada" label="análise aprovada"/>
+                  <form:option value="iniciado" label="iniciado"/>
+                  <form:option value="planejado" label="planejado"/>
+                  <form:option value="em andamento" label="em andamento"/>
+                  <form:option value="encerrado" label="encerrado"/>
+                  <form:option value="cancelado" label="cancelado"/>
+               </form:select>
+
+        </div>
+
+
+
 
 
 <script>
@@ -75,6 +99,8 @@
        $('#data_fim').datepicker({
              format: 'yyyy-mm-dd'
          });
+                 $('#dropdown').dropdown();
+
 </script>
 
 
