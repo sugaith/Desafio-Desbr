@@ -2,34 +2,48 @@
 
 ##Requisitos
 
-- ***OK*** O sistema deve permitir o cadastro (inserção, exclusão, alteração e consulta) de projetos.
+- ***OK*** O sistema deve permitir o cadastro (inserï¿½ï¿½o, exclusï¿½o, alteraï¿½ï¿½o e consulta) de projetos.
 
-- ***OK*** Para cada projeto devem ser informados: nome, data de início, gerente responsável,
-previsão de término, data real de término, orçamento total, descrição e status.
+- ***OK*** Para cada projeto devem ser informados: nome, data de inï¿½cio, gerente responsï¿½vel,
+previsï¿½o de tï¿½rmino, data real de tï¿½rmino, orï¿½amento total, descriï¿½ï¿½o e status.
 
-- Os projetos devem ser classificados em: baixo risco, médio risco e alto risco. A
-classificação de risco não é cadastrada no sistema.
+- Os projetos devem ser classificados em: baixo risco, mï¿½dio risco e alto risco. A
+classificaï¿½ï¿½o de risco nï¿½o ï¿½ cadastrada no sistema.
 
-- ***OK*** A cada instante, o projeto deve estar em um status específico e único. Os status possíveis
-não são cadastrados no sistema e são: em análise, análise realizada, análise aprovada,
+- ***OK*** A cada instante, o projeto deve estar em um status especï¿½fico e ï¿½nico. Os status possï¿½veis
+nï¿½o sï¿½o cadastrados no sistema e sï¿½o: em anï¿½lise, anï¿½lise realizada, anï¿½lise aprovada,
 iniciado, planejado, em andamento, encerrado, cancelado.
 
-- ***OK*** Se um projeto foi mudado o status para iniciado, em andamento ou encerrado não pode
-mais ser excluído.
+- ***OK*** Se um projeto foi mudado o status para iniciado, em andamento ou encerrado nï¿½o pode
+mais ser excluï¿½do.
 
-- O sistema não deve permitir o cadastro de um novo membro diretamente. Deve ser
-provida funcionalidade via web service, contendo nome e atribuição (cargo).
+- O sistema nï¿½o deve permitir o cadastro de um novo membro diretamente. Deve ser
+provida funcionalidade via web service, contendo nome e atribuiï¿½ï¿½o (cargo).
 
-- O sistema deve permitir associar membros aos projetos que tem atribuição funcionário.
-Regras de implementação:
+- O sistema deve permitir associar membros aos projetos que tem atribuiï¿½ï¿½o funcionï¿½rio.
+Regras de implementaï¿½ï¿½o:
 
-- ***OK*** Persistir as informações no BD enviado, utilizando os frameworks solicitados
+- ***OK*** Persistir as informaï¿½ï¿½es no BD enviado, utilizando os frameworks solicitados
 - ***OK*** Utilizar MVC
-- Utilizar testes unitários para avaliar as regras; 
+- Utilizar testes unitï¿½rios para avaliar as regras; 
 
 
 
 ##Mais infos
 - pasta do projeto Eclipse: TesteDesbr
-- endereço inicial: http://localhost:8080/projetos/list/
+- endereï¿½o inicial: http://localhost:8080/projetos/list/
 - maven clean, install, Run Spring Boot App
+
+
+
+# Table of Contents
+1. [Example](#example)
+2. [Example2](#example2)
+3. [Third Example](#third-example)
+4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+
+
+## Example
+## Example2
+## Third Example
+## [Fourth Example](http://www.fourthexample.com) 
